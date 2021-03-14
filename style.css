@@ -106,10 +106,13 @@ button, a, input, #product-main-toggle, .arrow {
 .flip {
     width: 14.5px;
     height: auto;
+    transition: all 250ms ease-in-out;
 }
 
 .flip:hover {
     cursor: pointer;
+    transform: scale(1.15);
+    transform-origin: 50%, 50%;
 }
 
 img.fluid,
@@ -159,10 +162,13 @@ video.fluid {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 250ms ease-in-out;
 }
 
 .arrow:hover {
     cursor: pointer;
+    transform: scale(1.15);
+    transform-origin: 50%, 50%;
 }
 
 .arrow img {
@@ -207,10 +213,17 @@ button:hover {
 
 button.primary {
     background-color: var(--brand-green);
-    border: none;
+    border: 2px solid var(--brand-green);
     color: #000000;
     padding: 17px 36px;
     font-weight: 600;
+    transition: all 250ms ease-in-out;
+}
+
+button.primary:hover {
+    background-color: #000000;
+    border: 2px solid var(--brand-green);
+    color: #ffffff;
 }
 
 button.secondary {
@@ -220,6 +233,14 @@ button.secondary {
     box-sizing: border-box;
     padding: 17px 36px;
     font-weight: 600;
+    transition: all 250ms ease-in-out;
+
+}
+
+button.secondary:hover {
+    background-color: var(--brand-green);
+    border: 2px solid var(--brand-green);
+    color: #000000;
 }
 
 .bottom-link  {
