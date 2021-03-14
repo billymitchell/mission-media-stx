@@ -38,7 +38,7 @@ const showSlide = () => {
     Object.entries(slideshows).forEach(([key]) => {
         // take the slideshow key image object
         slideshows[key]["images"]
-        //get the current slide 
+        //get the current slide, set to block
         [slideshows[key]["currentSlide"]].style.display = "block"
     })
 }
