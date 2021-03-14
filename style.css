@@ -103,12 +103,12 @@ button, a, input, #product-main-toggle, .arrow {
     cursor: pointer;
 }
 
-.rotate {
+.flip {
     width: 14.5px;
     height: auto;
 }
 
-.rotate:hover {
+.flip:hover {
     cursor: pointer;
 }
 

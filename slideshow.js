@@ -1,6 +1,16 @@
 const mainArmGuardToggle = document.querySelector("#main-arm-guard-toggle")
 const detailArmGuardToggle = document.querySelector("#detail-arm-guard-toggle")
 
+mainArmGuardToggle.addEventListener("click", () => {
+    nextSlide("mainArmGuard");
+    rotate(mainArmGuardToggle)
+})
+
+detailArmGuardToggle.addEventListener("click", () => {
+    nextSlide("detailArmGuard");
+})
+
+
 const slideshows = {
     mainArmGuard: {
         images: document.querySelectorAll(".product-main"),
@@ -13,14 +23,11 @@ const slideshows = {
 }
 
 const reset = () => {
-
     Object.entries(slideshows).forEach(([key]) => {
-
         for (let i = 0; i < slideshows[key]["images"].length; i++) {
             slideshows[key]["images"][i].style.display = "none";
         }
     });
-
 }
 
 // hide each image
@@ -54,13 +61,11 @@ const nextSlide = (slideshow) => {
     //show current slide
     showSlide()
 }
-// on view, trigger fade-in/fade-out anmiation
-// rotate the rotate image
 
-mainArmGuardToggle.addEventListener("click", () => {
-    nextSlide("mainArmGuard");
-})
-
-detailArmGuardToggle.addEventListener("click", () => {
-    nextSlide("detailArmGuard");
-})
+const rotate = (element) => {
+    element.classList.add("rotate")
+    // remove animation after its done to do again
+    setTimeout(() => {
+        element.classList.remove("rotate")
+    }, 500)
+}
