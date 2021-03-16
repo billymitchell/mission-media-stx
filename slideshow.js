@@ -1,5 +1,6 @@
 const mainArmGuardToggle = document.querySelector("#main-arm-guard-toggle")
 const detailArmGuardToggle = document.querySelector("#detail-arm-guard-toggle")
+const colors = document.querySelectorAll(".color")
 
 mainArmGuardToggle.addEventListener("click", () => {
     nextSlide("mainArmGuard");
@@ -11,6 +12,35 @@ detailArmGuardToggle.addEventListener("click", () => {
 })
 
 
+// pass colors object in 
+const colorToggle = (colors) => {
+    // for each color
+    colors.forEach(color => {
+        // if "checked"
+        if (color.checked) {
+            // add class
+            color.classList.add("active")
+        } else {
+            // else remove class
+            color.classList.remove("active")
+        }
+    })
+
+}
+
+// for each color, run function on click
+colors.forEach(color => {
+    color.addEventListener("click", () => {
+        colorToggle(colors)
+        // On color toggle, update slideshow images
+        // updateSlides(color, slideshow)
+    })
+})
+
+//Initialize colors
+colorToggle(colors)
+
+// Main slideshow object
 const slideshows = {
     mainArmGuard: {
         images: document.querySelectorAll(".product-main"),
@@ -22,6 +52,7 @@ const slideshows = {
     }
 }
 
+// initialize / reset images 
 const reset = () => {
     Object.entries(slideshows).forEach(([key]) => {
         for (let i = 0; i < slideshows[key]["images"].length; i++) {
@@ -69,3 +100,6 @@ const rotate = (element) => {
         element.classList.remove("rotate")
     }, 500)
 }
+
+
+

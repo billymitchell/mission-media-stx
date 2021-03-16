@@ -8,6 +8,12 @@
     outline: 1px solid red;
 } */
 
+
+input {
+    -webkit-appearance: none;
+}
+
+
 div, p, span {
     font-family: 'Roboto Mono', monospace;
     color: #ffffff;
@@ -262,6 +268,7 @@ button.secondary:hover {
 
 input {
     cursor: pointer;
+    transition: all 150ms ease-in-out;
 }
 
 input[name="color"] {
@@ -271,6 +278,22 @@ input[name="color"] {
             appearance: none;
 }
 
+input[name="color"]:active, 
+input[name="color"]:focus {
+    outline: 1px solid #000;
+    border: 1px solid var(--brand-green) !important;
+}
+
+.active {
+    outline: 1px solid #000;
+    border: 1px solid var(--brand-green) !important;
+}
+
+.active::after {
+    content: "" !important;
+    border: none !important;
+    outline: none !important;
+}
 
 .color {
     width: 25px;
